@@ -21,7 +21,12 @@ class Song
   end
   
   def self.create_by_name(name)
+<<<<<<< HEAD
     song_instance = new_by_name(name)
+=======
+    song_instance = self.new
+    song_instance.name = name
+>>>>>>> 6770a9fcb28fea0777fd82bee5ef0c9e258f506d
     song_instance.save
     song_instance
   end
@@ -35,13 +40,18 @@ class Song
   end
   
   def self.find_or_create_by_name(name)
+<<<<<<< HEAD
     song = find_by_name(name) 
+=======
+    song = find_or_create_by_name(name) 
+>>>>>>> 6770a9fcb28fea0777fd82bee5ef0c9e258f506d
     if song != nil
       return song
     else
       return create_by_name(name)
     end
   end
+<<<<<<< HEAD
   
   def self.alphabetical
     all.sort{|song_a,song_b| song_a.name <=> song_b.name}
@@ -65,4 +75,7 @@ class Song
   def self.destroy_all
     @@all.clear
   end
+=======
+
+>>>>>>> 6770a9fcb28fea0777fd82bee5ef0c9e258f506d
 end
